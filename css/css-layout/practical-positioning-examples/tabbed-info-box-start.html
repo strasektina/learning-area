@@ -4,7 +4,58 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Tabbed info box</title>
-    <style></style>
+    <style>html {
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+      .info-box {
+  width: 452px;
+  height: 400px;
+  margin: 1.25rem auto 0;
+}
+      .info-box [role="tablist"] {
+  min-width: 100%;
+  display: flex;
+}
+      .info-box [role="tab"] {
+  padding: 0 1rem;
+  line-height: 3rem;
+  background: white;
+  color: #b60000;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}.info-box [role="tab"]:focus span,
+.info-box [role="tab"]:hover span {
+  outline: 1px solid blue;
+  outline-offset: 6px;
+  border-radius: 4px;
+}.info-box [role="tab"][aria-selected="true"] {
+  background-color: #b60000;
+  color: white;
+}.info-box .panels {
+  height: 352px;
+  clear: both;
+  position: relative;
+}.info-box [role="tabpanel"] {
+  background-color: #b60000;
+  color: white;
+  position: absolute;
+  padding: 0.8rem 1.2rem;
+  height: 352px;
+  top: 0;
+  left: 0;
+}.info-box [role="tabpanel"].is-hidden {
+  display: none;
+}
+    </style>
   </head>
 
   <body>
